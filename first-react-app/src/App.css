@@ -1,0 +1,17 @@
+.welcome {
+  color: red;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+}
+.kos {
+  width: 100%;
+  height: 30px;
+
+  background-color: black;
+  text-align: center;
+}
+.ko {
+  color: white;
+  text-decoration: none;
+}
