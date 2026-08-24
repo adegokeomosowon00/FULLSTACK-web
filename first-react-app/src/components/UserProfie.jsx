@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import { ThemeContext } from "../Context/ThemeContext";
 import axios from "axios";
-import { useUser } from "./userContext";
+import { useUser } from "./UserContext";
 
 function UserProfile() {
   // const [promptName, setPromptName] = useState("");
