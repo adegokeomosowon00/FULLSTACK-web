@@ -13,10 +13,13 @@ function Login() {
   const onLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:2468/users/login", {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        "https://fullstack-web-1.onrender.com/users/login",
+        {
+          email,
+          password,
+        },
+      );
 
       const token = res.data;
       const decodedToken = jwtDecode(token);

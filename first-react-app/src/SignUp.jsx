@@ -12,13 +12,14 @@ function SignUp() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:2468/users/create", {
+      await axios.post("https://fullstack-web-1.onrender.com/users/create", {
         email,
         password,
       });
       setEmail("");
       setPassword("");
-      navigate("/");    } catch (err) {
+      navigate("/");
+    } catch (err) {
       console.log(err.message);
       setError(err.message);
     }

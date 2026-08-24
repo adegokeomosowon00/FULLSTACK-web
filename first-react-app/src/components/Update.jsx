@@ -15,10 +15,13 @@ function UpdateUser() {
     try {
       if (!password && !email) return alert("fill your credentials");
       const token = localStorage.getItem("token");
-      const res = await axios.put(`http://localhost:2468/users/${id}`, {
-        password,
-        email,
-      });
+      const res = await axios.put(
+        `https://fullstack-web-1.onrender.com/users/${id}`,
+        {
+          password,
+          email,
+        },
+      );
       navigate(`/user/${id}`);
     } catch (err) {
       console.error(err.message);

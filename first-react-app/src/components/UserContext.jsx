@@ -14,11 +14,14 @@ export const UserProvider = ({ children }) => {
 
   const getUsers = async (token) => {
     try {
-      const res = await axios.get(`http://localhost:2468/users`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
+      const res = await axios.get(
+        `https://fullstack-web-1.onrender.com/users`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         },
-      });
+      );
       setUsers(res.data);
       return res.data;
     } catch (err) {
@@ -36,11 +39,14 @@ export const UserProvider = ({ children }) => {
         throw new Error("User Id not found in token");
       }
 
-      const res = await axios.get(`http://localhost:2468/users/${userId}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
+      const res = await axios.get(
+        `https://fullstack-web-1.onrender.com/users/${userId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         },
-      });
+      );
 
       setUser(res.data);
       return res.data;

@@ -15,17 +15,22 @@ function UserProfile() {
     const getUser = async () => {
       const token = await localStorage.getItem("token");
       console.log(token);
-      const res = await axios.get(`http://localhost:2468/users/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
+      const res = await axios.get(
+        `https://fullstack-web-1.onrender.com/users/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         },
-      });
+      );
       setUser(res.data);
     };
     getUser();
   }, []);
   const DeleteUser = async () => {
-    const res = await axios.delete(`http://localhost:2468/users/${id}`);
+    const res = await axios.delete(
+      `https://fullstack-web-1.onrender.com/users/${id}`,
+    );
     navigate("/sign-up");
   };
 
